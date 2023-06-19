@@ -9,7 +9,8 @@ export const ACTIONS = {
     DISPLAY_PHOTO_DETAILS: 'DISPLAY_PHOTO_DETAILS',
     FAV_PHTOT_TOGGLE: 'FAV_PHOTO_TOGGLE',
     HIDE_DISPLAY_PHOTO_DETAILS: 'HIDE_DISPLAY_PHOTO_DETAILS',
-    GET_PHOTOS_BY_TOPICS: 'GET_PHOTOS_BY_TOPICS'
+    GET_PHOTOS_BY_TOPICS: 'GET_PHOTOS_BY_TOPICS',
+    SHOW_FAVORITE_LIST: 'SHOW_FAVORITE_LIST'
   }
   
   function reducer(state, action) {
@@ -51,6 +52,14 @@ export const ACTIONS = {
             return{
                 ...state,
                 currentTopic : action.id
+            }
+        case ACTIONS.SHOW_FAVORITE_LIST:
+            let myFavPhotos = state.favorites.map(id=>{
+                return state.photos.find(photo=>photo.id == id)
+            })
+            return{
+                ...state,
+                photos: myFavPhotos
             }
         default:
             return state;

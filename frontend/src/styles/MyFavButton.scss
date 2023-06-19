@@ -1,0 +1,16 @@
+.my-favorite-btn{
+    text-decoration: none;
+    background-color: #C80000;
+    color: #fff;
+    border-radius: 1rem;
+    border: none;
+    margin-right: 15px;
+    height: 26px;
+    transition: all 0.3s;
+    font-weight: 400;
+
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}

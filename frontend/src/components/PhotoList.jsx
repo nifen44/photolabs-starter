@@ -5,7 +5,7 @@ import PhotoListItem from './PhotoListItem';
 
 
 const PhotoList = (props) => {
-  const { photos } = props.state;
+  const { photos } = props;
   const className = props.showType === 'single' ? "photo-list" : "photo-list-modal";
   return <ul className={className}>
     {photos.map(ele=>{
