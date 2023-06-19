@@ -8,8 +8,6 @@ import { ACTIONS } from './hooks/useApplicationData';
 
 const PhotoListItem = (props) => {
 
-  // const { onPhotoSelect, favorites, setFavorites } = props.state;
-
   const heartHandleClick = () => {
     console.log('heart toggle');
     props.dispatch(
@@ -21,7 +19,6 @@ const PhotoListItem = (props) => {
   };
 
   const photoHandlerClick = () => {
-      // onPhotoSelect(props.id);
       props.dispatch(
         {
           type: ACTIONS.DISPLAY_PHOTO_DETAILS,
@@ -31,7 +28,7 @@ const PhotoListItem = (props) => {
   }
 
   const className = props.showType === 'single' ? 'photo-list__item' : (props.showType === 'three' ? 'photo-list-modal__item' : 'photo-list-detail__item');
-  const userDetailClassName = props.showType === 'three' ? 'photo-list__user-details' : 'photo-list-modal__user-details';
+  const userDetailClassName = props.showType === 'single' ? 'photo-list__user-details' : 'photo-list-detail__user-details';
   return(
     <li className={className} id={props.id}>
       <PhotoFavButton heart={props.state.favorites.indexOf(props.id) >= 0} heartHandleClick={heartHandleClick} />

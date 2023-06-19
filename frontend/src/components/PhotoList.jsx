@@ -11,8 +11,8 @@ const PhotoList = (props) => {
     {photos.map(ele=>{
       return (
         <PhotoListItem 
-        {...props}
-        showType={props.showType}
+          {...props}
+          showType={props.showType}
           key={ele.id} {...ele} 
         />
       )

@@ -7,10 +7,9 @@ const TopicList = (props) => {
   const { topics } = props.state;
   return(
     <div className="top-nav-bar__topic-list">
-    {topics.map(ele=>{
-      //console.log(ele);
+    {topics && topics.map(ele=>{
       return (
-        <TopicListItem key={ele.id} {...ele}></TopicListItem>
+        <TopicListItem key={ele.id} {...ele} {...props}></TopicListItem>
       )
     })}
   </div>

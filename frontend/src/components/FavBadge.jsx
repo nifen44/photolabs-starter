@@ -1,6 +1,5 @@
 import React, { useReducer } from 'react';
 import FavIcon from './FavIcon';
-import reducer from './hooks/useApplicationData';
 import '../styles/FavBadge.scss';
 
 export const FavBadge = (props) => {

@@ -3,13 +3,19 @@ import React from 'react';
 import '../styles/PhotoDetailsModal.scss'
 import PhotoList from '../components/PhotoList';
 import PhotoListItem from '../components/PhotoListItem';
+import { ACTIONS } from '../components/hooks/useApplicationData';
 
 export const PhotoDetailsModal = (props) => {
-  //alert(props.currentPhoto.urls);
 
-  const { onClosePhotoDetailsModal, currentPhoto } = props.state;
-  const photos = Object.values(currentPhoto.similar_photos);
+  const { currentPhoto } = props.state;
 
+  const onClosePhotoDetailsModal = ()=>{
+    props.dispatch(
+      {
+        type:ACTIONS.HIDE_DISPLAY_PHOTO_DETAILS,
+      }
+    )
+  }
 
   return(
     <div className='photo-details-modal'>
@@ -26,13 +32,11 @@ export const PhotoDetailsModal = (props) => {
           </defs>
         </svg>
       </button>
-      <PhotoListItem 
+      {currentPhoto && <PhotoListItem 
           {...currentPhoto}
           {...props}
-          // favorites={props.favorites} 
-          // setFavorites={props.setFavorites} 
-          showType={'detail'}/>
-      <PhotoList {...props} photos={Object.values(currentPhoto.similar_photos)} /*photos={photos} favorites={props.favorites} setFavorites={props.setFavorites}*/ showType={props.showType}/>
+          showType={'detail'}/>}
+      {currentPhoto && <PhotoList {...props} photos={Object.values(currentPhoto.similar_photos)} showType={props.showType}/>}
   </div>
   )
 }

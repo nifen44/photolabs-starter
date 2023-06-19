@@ -1,17 +1,26 @@
 import React from 'react';
 
 import '../styles/TopicListItem.scss'
+import { ACTIONS } from './hooks/useApplicationData';
 
-const TopicListItem = (props) => (
+
+const TopicListItem = (props) => {
+
+  const handleTopic = ()=>{
+    props.dispatch(
+      {
+        type: ACTIONS.GET_PHOTOS_BY_TOPICS,
+        id: props.id
+      }
+    )
+  }
+
+  return(
     <div className="topic-list__item">
-    {/* Insert React */}
-      <span>{props.title}</span>
-  </div>
-  );
+        <span onClick={handleTopic}>{props.title}</span>
+    </div>
+  )
+    
+}
 
-// TopicListItem.defaultProps =   {
-//   "id": "1",
-//   "slug": "topic-1",
-//   "label": "Nature"
-// }
 export default TopicListItem

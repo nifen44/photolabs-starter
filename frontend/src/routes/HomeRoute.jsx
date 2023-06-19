@@ -1,26 +1,18 @@
-import {React, useReducer, useState} from 'react';
+import React from 'react';
 import PhotoList from '../components/PhotoList';
 import TopNavigation from '../components/TopNavigationBar';
 import '../styles/HomeRoute.scss';
-import photos from '../mocks/photos';
-import topics from '../mocks/topics';
 import PhotoDetailsModal from './PhotoDetailsModal';
-import reducer from '../components/hooks/useApplicationData';
 
-
-const HomeRoute = () => {
-
-  // const applicationData = useApplicationData();
-  const [state, dispatch] = useReducer(reducer, {photos, topics, favorites: [], modalShow: false});
-  console.log(state);
+const HomeRoute = (props) => {
   return(
     <div className="home-route">
-      <TopNavigation state={state} dispatch={dispatch} />
-      <PhotoList state={state} dispatch={dispatch} showType={'single'}/>
-      {state.modalShow && 
+      <TopNavigation state={props.state} dispatch={props.dispatch} />
+      <PhotoList state={props.state} dispatch={props.dispatch} showType={'single'} />
+      {props.state.modalShow && 
           <PhotoDetailsModal 
-            state={state} 
-            dispatch={dispatch}
+            state={props.state} 
+            dispatch={props.dispatch}
             showType={'three'}
           />
       }
