@@ -2,7 +2,9 @@
 The PhotoLabs project for the Web Development React course programming.
 
 # screenshot
-
+!["PhotoLab Main Page"] (https://github.com/nifen44/photolabs-starter/blob/main/doc/photo-list.png?raw=true)
+!["PhotoLab Detail Page"] (https://github.com/nifen44/photolabs-starter/blob/main/doc/photo-detail.png?raw=true)
+!["PhotoLab Detail List Page"] (https://github.com/nifen44/photolabs-starter/blob/main/doc/photo-detail-list.png?raw=true)
 
 ## Setup
 
