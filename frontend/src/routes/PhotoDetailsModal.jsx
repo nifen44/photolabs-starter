@@ -3,7 +3,7 @@ import React from 'react';
 import '../styles/PhotoDetailsModal.scss'
 import PhotoList from '../components/PhotoList';
 import PhotoListItem from '../components/PhotoListItem';
-import { ACTIONS } from '../components/hooks/useApplicationData';
+import { ACTIONS } from '../components/reducers/reducer';
 
 export const PhotoDetailsModal = (props) => {
 

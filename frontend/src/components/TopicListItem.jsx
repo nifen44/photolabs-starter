@@ -1,7 +1,7 @@
 import React from 'react';
 
 import '../styles/TopicListItem.scss'
-import { ACTIONS } from './hooks/useApplicationData';
+import { ACTIONS } from './reducers/reducer';
 
 
 const TopicListItem = (props) => {

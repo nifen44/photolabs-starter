@@ -10,7 +10,7 @@ const PhotoList = (props) => {
   return <ul className={className}>
     {photos.map(ele=>{
       return (
-        <PhotoListItem 
+        ele && <PhotoListItem 
           {...props}
           showType={props.showType}
           key={ele.id} {...ele} 

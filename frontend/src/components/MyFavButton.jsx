@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/MyFavButton.scss'
-import { ACTIONS } from './hooks/useApplicationData';
+import { ACTIONS } from './reducers/reducer';
 
 const MyFavButton = (props) =>{
 

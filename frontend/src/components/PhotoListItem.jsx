@@ -3,13 +3,12 @@ import React from 'react';
 
 import '../styles/PhotoListItem.scss';
 import PhotoFavButton from './PhotoFavButton';
-import { ACTIONS } from './hooks/useApplicationData';
+import { ACTIONS } from './reducers/reducer';
 
 
 const PhotoListItem = (props) => {
 
   const heartHandleClick = () => {
-    console.log('heart toggle');
     props.dispatch(
       {
         type: ACTIONS.FAV_PHTOT_TOGGLE,
